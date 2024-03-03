@@ -1,18 +1,21 @@
 using UnityEngine;
 using UnityEngine.AI;
 using System.Collections.Generic;
-using Unity.VisualScripting;
+
 
 public class AIPatrol : MonoBehaviour
 {
     public List<Transform> checkpoints;
     private NavMeshAgent agent;
     private int currentCheckpointIndex = -1;
-
+    private FieldOfView vision;
+   
 
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
+        vision = GetComponent<FieldOfView>();
+
         if (checkpoints.Count > 0)
         {
             currentCheckpointIndex = Random.Range(0, checkpoints.Count);
@@ -23,13 +26,18 @@ public class AIPatrol : MonoBehaviour
 
     void Update()
     {
-        // Проверяем, достиг ли агент текущего чекпоинта
-        if (agent.remainingDistance <= agent.stoppingDistance && !agent.pathPending)
+    
+        if (agent.remainingDistance <= agent.stoppingDistance && !agent.pathPending && !vision.canSeePlayer)
         {
-            // Переходим к следующему чекпоинту
+           
             SetDestinationToNextCheckpoint();
             
         }
+        if(vision.canSeePlayer)
+        {
+            Hunt();
+        }
+        
     }
 
     void SetDestinationToNextCheckpoint()
@@ -51,6 +59,11 @@ public class AIPatrol : MonoBehaviour
 
         // Устанавливаем пункт назначения агента к следующему чекпоинту
         agent.SetDestination(checkpoints[currentCheckpointIndex].position);
+    }
+
+    void Hunt()
+    {
+        agent.SetDestination(vision.playerPosition.position);
     }
 }
 

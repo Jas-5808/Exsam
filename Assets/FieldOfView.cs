@@ -15,6 +15,7 @@ public class FieldOfView : MonoBehaviour
     public LayerMask obstructionMask;
 
     public bool canSeePlayer;
+    public Transform playerPosition;
 
     private void Start()
     {
@@ -47,8 +48,10 @@ public class FieldOfView : MonoBehaviour
                 float distanceToTarget = Vector3.Distance(transform.position, target.position);
                 if (!Physics.Raycast(transform.position, directionToTarget, distanceToTarget, obstructionMask))
                 {
-                    Debug.Log("hello");
+                    
                     canSeePlayer = true;
+                    playerPosition = playerRef.transform;
+                    
                 }
                 else
                     canSeePlayer = false;
