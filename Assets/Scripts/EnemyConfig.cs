@@ -7,7 +7,7 @@ public class EnemyConfig : MonoBehaviour
     [SerializeField] private int Id;
     [SerializeField] private string Name;
     [SerializeField] private float Speed;
-    [SerializeField] private float Flashing;
+    [SerializeField] private float flashing;
     private void Start()
     {
         
@@ -15,6 +15,10 @@ public class EnemyConfig : MonoBehaviour
     public float GetSpeed()
     {
         return Speed;
+    }
+    public float Flashing()
+    {
+        return flashing;
     }
 
     
