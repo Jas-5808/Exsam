@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using Unity.VisualScripting.Antlr3.Runtime;
 
 public class MoveObjectController : MonoBehaviour 
 {
@@ -16,10 +17,10 @@ public class MoveObjectController : MonoBehaviour
 	private GUIStyle guiStyle;
 	private string msg;
 
-	private int rayLayerMask; 
+	private LayerMask rayLayerMask;
 
 
-	void Start()
+    void Start()
 	{
 		//Initialize moveDrawController if script is enabled.
 		player = GameObject.FindGameObjectWithTag("Player");
@@ -48,7 +49,6 @@ public class MoveObjectController : MonoBehaviour
 		if (other.gameObject == player)		//player has collided with trigger
 		{			
 			playerEntered = true;
-
 		}
 	}
 
@@ -67,15 +67,15 @@ public class MoveObjectController : MonoBehaviour
 	void Update()
 	{		
 		if (playerEntered)
-		{	
-
-			//center point of viewport in World space.
-			Vector3 rayOrigin = fpsCam.ViewportToWorldPoint(new Vector3(0.5f,0.5f,0f));
+		{
+            //center point of viewport in World space.
+            Vector3 rayOrigin = fpsCam.ViewportToWorldPoint(new Vector3(0.5f,0.5f,0f));
 			RaycastHit hit;
 
-			//if raycast hits a collider on the rayLayerMask
-			if (Physics.Raycast(rayOrigin,fpsCam.transform.forward, out hit,reachRange,rayLayerMask))
-			{
+
+            //if raycast hits a collider on the rayLayerMask
+            if (Physics.Raycast(rayOrigin, fpsCam.transform.forward, out hit, reachRange, LayerMask.GetMask("Door")))
+            {
 				MoveableObject moveableObject = null;
 				//is the object of the collider player is looking at the same as me?
 				if (!isEqualToParent(hit.collider, out moveableObject))
