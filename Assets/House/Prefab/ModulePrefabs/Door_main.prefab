@@ -117,7 +117,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c6531421bd49bc4ba44e586502382a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerHeadTag: MainCamera
+  PlayerHeadTag: Player
   knob: {fileID: 867912744111275510}
   controls:
     openingSpeed: 1
