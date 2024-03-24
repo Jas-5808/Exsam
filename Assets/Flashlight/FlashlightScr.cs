@@ -1,30 +1,32 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using System.Collections;
 
-public class Flashlight : MonoBehaviour
+public class FlashlightController : MonoBehaviour
 {
     [SerializeField] private Light flashlightLight;
     [SerializeField] private float minIntensity = 0.1f;
     [SerializeField] private float maxIntensity = 1f;
-    [SerializeField] private float minDelay = 0.1f;
-    [SerializeField] private float maxDelay = 1f;
+    [SerializeField] private float minOnTime = 0.1f;
+    [SerializeField] private float maxOnTime = 1f;
+    [SerializeField] private float minOffTime = 0.1f;
+    [SerializeField] private float maxOffTime = 1f;
+    [SerializeField] private float instability = 0.1f; // Добавлено значение нестабильности света
 
     private bool isFlashing = false;
 
     void Start()
     {
-        // Запускаем мигание при старте скрипта
         StartFlashing();
     }
 
     void Update()
     {
-        // Проверяем, мигает ли фонарь
         if (isFlashing)
         {
-            // Изменяем интенсивность света фонаря для создания эффекта мигания
-            flashlightLight.intensity = Random.Range(minIntensity, maxIntensity);
+            // Изменяем интенсивность света с учетом нестабильности
+            float intensity = Random.Range(minIntensity, maxIntensity);
+            intensity += Random.Range(-instability, instability);
+            flashlightLight.intensity = Mathf.Clamp(intensity, minIntensity, maxIntensity);
         }
     }
 
@@ -32,30 +34,23 @@ public class Flashlight : MonoBehaviour
     {
         while (isFlashing)
         {
-            // Включаем фонарь
             flashlightLight.enabled = true;
-            // Ждем случайное время
-            yield return new WaitForSeconds(Random.Range(minDelay, maxDelay));
-            // Выключаем фонарь
+            yield return new WaitForSeconds(Random.Range(minOnTime, maxOnTime));
             flashlightLight.enabled = false;
-            // Ждем еще некоторое случайное время
-            yield return new WaitForSeconds(Random.Range(minDelay, maxDelay));
+            yield return new WaitForSeconds(Random.Range(minOffTime, maxOffTime));
         }
     }
 
     public void StartFlashing()
     {
-        // Включаем мигание
         isFlashing = true;
-        // Запускаем корутину мигания
         StartCoroutine(Flash());
     }
 
     public void StopFlashing()
     {
-        // Отключаем мигание
         isFlashing = false;
-        // Возвращаем стандартную интенсивность света
         flashlightLight.intensity = maxIntensity;
     }
 }
+

@@ -10112,6 +10112,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1223311269}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 9dd756d51e979404db22f5e972fbdeef,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1223311271}
   m_SourcePrefab: {fileID: 100100000, guid: 9dd756d51e979404db22f5e972fbdeef, type: 3}
 --- !u!1001 &492203566
 PrefabInstance:
@@ -16205,10 +16209,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flashlightLight: {fileID: 662621749}
-  minIntensity: 0.1
+  minIntensity: 0.8
   maxIntensity: 1
-  minDelay: 0.1
-  maxDelay: 1
+  minOnTime: 0.1
+  maxOnTime: 0.5
+  minOffTime: 0.1
+  maxOffTime: 1
+  instability: 0.3
 --- !u!1001 &781272459
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24888,6 +24895,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 6
+--- !u!95 &1223311271
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1223311267}
+  m_Enabled: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f338be7ff1fca9445be9cfcec0f403c2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &1224251846
 PrefabInstance:
   m_ObjectHideFlags: 0
