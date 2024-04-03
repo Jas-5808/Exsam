@@ -11,7 +11,7 @@ public class SimpleNPCMovement : MonoBehaviour
     private bool isMoving = false; // Флаг, указывающий, двигается ли NPC в данный момент
 
     private float delayBeforeStart = 5f; // Задержка перед началом движения
-    private float timer = 0f; // Таймер для подсчета времени
+    [SerializeField] private float timer = 0f; // Таймер для подсчета времени
 
     void Start()
     {
