@@ -12,7 +12,7 @@ public class MenuManager : MonoBehaviour
 
     public void Play()
     {
-        SceneManager.LoadScene("ExampleHouses");
+        SceneManager.LoadScene("GameScene");
     }
     private void Settings()
     {
