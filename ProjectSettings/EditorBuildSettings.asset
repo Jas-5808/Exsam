@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/House/ModularHousePack1/Scenes/ExampleHouses.unity
     guid: 16996010ffac54543b69c4b65ec0b2fb
+  - enabled: 1
+    path: Assets/Scenes/street-1.unity
+    guid: afa37d78c3e2b294ab61494c15d7bfd6
   m_configObjects: {}

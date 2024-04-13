@@ -5,19 +5,39 @@ public class NewBehaviourScript : MonoBehaviour
 {
     public VideoPlayer videoPlayer;
     public RenderTexture renderTexture;
+    public VideoClip videoClip1;
+    public VideoClip videoClip2;
+    private bool isFirstVideoPlayed = false;
 
     void Start()
     {
-        // ”станавливаем RenderTexture как текстуру дл€ VideoPlayer
         videoPlayer.targetTexture = renderTexture;
+        videoPlayer.isLooping = false;
+        videoPlayer.loopPointReached += OnVideoFinished;
 
-        // ”станавливаем видео на посто€нное зацикливание
+        PlayFirstVideo();
+    }
+
+    void PlayFirstVideo()
+    {
+        videoPlayer.clip = videoClip1;
+        isFirstVideoPlayed = false;
+        videoPlayer.Play();
+    }
+
+    void PlaySecondVideo()
+    {
+        videoPlayer.clip = videoClip2;
         videoPlayer.isLooping = true;
+        videoPlayer.Play();
+    }
 
-        // ѕровер€ем, запущено ли воспроизведение, и запускаем, если нет
-        if (!videoPlayer.isPlaying)
+    void OnVideoFinished(VideoPlayer vp)
+    {
+        if (!isFirstVideoPlayed)
         {
-            videoPlayer.Play();
+            isFirstVideoPlayed = true;
+            PlaySecondVideo();
         }
     }
 }

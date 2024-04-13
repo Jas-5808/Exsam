@@ -12,7 +12,7 @@ public class MenuManager : MonoBehaviour
 
     public void Play()
     {
-        SceneManager.LoadScene("Main ");
+        SceneManager.LoadScene("street-1");
     }
     private void Settings()
     {

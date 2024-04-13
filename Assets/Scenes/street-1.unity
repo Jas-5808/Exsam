@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.46756646, g: 0.58389556, b: 0.7635243, a: 1}
+  m_IndirectSpecularColor: {r: 0.4675655, g: 0.583894, b: 0.7635212, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1326,6 +1326,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: FirstPersonController
       objectReference: {fileID: 0}
+    - target: {fileID: 4459864851310106426, guid: 6bacecc4f3df9584198879c73a6b6c36,
+        type: 3}
+      propertyPath: m_BackGroundColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4459864851310106426, guid: 6bacecc4f3df9584198879c73a6b6c36,
+        type: 3}
+      propertyPath: m_BackGroundColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4459864851310106426, guid: 6bacecc4f3df9584198879c73a6b6c36,
+        type: 3}
+      propertyPath: m_BackGroundColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4459864851310106426, guid: 6bacecc4f3df9584198879c73a6b6c36,
+        type: 3}
+      propertyPath: m_BackGroundColor.r
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1716,14 +1736,71 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 137.145
       objectReference: {fileID: 0}
+    - target: {fileID: 3552064725898838135, guid: 76882239a30d47b48aea77fa006144cd,
+        type: 3}
+      propertyPath: m_BackGroundColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3552064725898838135, guid: 76882239a30d47b48aea77fa006144cd,
+        type: 3}
+      propertyPath: m_BackGroundColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3552064725898838135, guid: 76882239a30d47b48aea77fa006144cd,
+        type: 3}
+      propertyPath: m_BackGroundColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3552064725898838135, guid: 76882239a30d47b48aea77fa006144cd,
+        type: 3}
+      propertyPath: m_BackGroundColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3814644840392014996, guid: 76882239a30d47b48aea77fa006144cd,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -7.337
+      objectReference: {fileID: 0}
+    - target: {fileID: 3814644840392014996, guid: 76882239a30d47b48aea77fa006144cd,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 5.066
+      objectReference: {fileID: 0}
+    - target: {fileID: 3814644840392014996, guid: 76882239a30d47b48aea77fa006144cd,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 6.895
+      objectReference: {fileID: 0}
     - target: {fileID: 4228606557079432316, guid: 76882239a30d47b48aea77fa006144cd,
         type: 3}
       propertyPath: m_Name
       value: House8
       objectReference: {fileID: 0}
+    - target: {fileID: 5013900317574803553, guid: 76882239a30d47b48aea77fa006144cd,
+        type: 3}
+      propertyPath: m_BackGroundColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5013900317574803553, guid: 76882239a30d47b48aea77fa006144cd,
+        type: 3}
+      propertyPath: m_BackGroundColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5013900317574803553, guid: 76882239a30d47b48aea77fa006144cd,
+        type: 3}
+      propertyPath: m_BackGroundColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5013900317574803553, guid: 76882239a30d47b48aea77fa006144cd,
+        type: 3}
+      propertyPath: m_BackGroundColor.r
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 5550913622417299704, guid: 76882239a30d47b48aea77fa006144cd, type: 3}
+    - {fileID: 2537184815853159079, guid: 76882239a30d47b48aea77fa006144cd, type: 3}
+    - {fileID: 6334998902304387761, guid: 76882239a30d47b48aea77fa006144cd, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 76882239a30d47b48aea77fa006144cd, type: 3}
